@@ -4,8 +4,9 @@ var app = require('express')
 var app = express()
 
 app.all('/',function (req,res,next) {
-    res.write('all\n')
-    next()  //needed to pass to the next functions
+    res.write('all\n') // there's still something to read later on
+    res.end('all\n') // this is all we need
+    //next()  //needed to pass to the next functions
   })
 
 app.get('/',function (req,res,next) {
