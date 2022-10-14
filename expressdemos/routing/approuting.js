@@ -1,10 +1,11 @@
+var express = require('express')
 var app = require('express')
 
 var app = express()
 
 app.all('/',function (req,res,next) {
     res.write('all\n')
-    next()
+    next()  //needed to pass to the next functions
   })
 
 app.get('/',function (req,res,next) {
@@ -12,7 +13,7 @@ app.get('/',function (req,res,next) {
   })
 
 app.put('/',function (req,res,next) {
-    res.end('putget')
+    res.end('put')
   })
 
 app.post('/',function (req,res,next) {
